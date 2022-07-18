@@ -1,0 +1,29 @@
+<%- include('../partials/navbar.ejs') %>
+  <section> 
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <form class="col-lg-8 col-sm-6">
+                <div class="form-group mt-1">
+                    <label for="flightNo">Flight No</label>
+                    <input type="text" class="form-control" placeholder="Flight Number" name="flightNo">
+                </div>
+                <div class="form-group mt-1">
+                  <label for="airline">Airline</label>
+                  <input type="text" class="form-control" placeholder="Delta" name="airlines">
+                </div>
+                <div class="form-group mt-1">
+                    <label for="airport">Airport</label>
+                    <input type="text" class="form-control" placeholder="DFW" name="airport">
+                  </div>
+                <div class="form-group mt-1">
+                  <label for="date">Departure Date</label>
+                  <input type="date" class="form-control" name="date">
+                </div>
+                <div class="form-group mt-3">
+                <input type="submit" class="form-control btn btn-outline-success">
+                 </div>
+              </form>
+        </div>
+    </div>
+  </section>
+<%- include('../partials/footer.ejs') %>
