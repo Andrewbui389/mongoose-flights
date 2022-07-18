@@ -1,0 +1,16 @@
+<%- include('../partials/navbar.ejs') %>
+<section>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="card col-lg-8 mt-1 col-med-4">
+                <div class="card-body text-lg-start text-center">
+                  <h5 class="card-title">Flight Number: <%= data.flightNo%></h5>
+                  <h3 class="cardtext">Airport: <%= data.airport%></h3>
+                  <h3 class="cardtext">Airline: <%= data.airline%></h3>
+                  <h3 class="cardtext">Departure Date: <%= date %></h3>
+                </div>
+              </div>
+        </div>
+    </div>
+</section>
+<%- include('../partials/footer.ejs') %>

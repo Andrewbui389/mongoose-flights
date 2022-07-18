@@ -18,13 +18,12 @@
               <% flights.forEach((x) => { %>
               <tbody>
                 <tr>
-                  <th scope="row"><%= x.flightNo %></th>
+                  <th scope="row"><a class="btn btn-outline-secondary" href="/flights/<%= x.id %>"><%= x.flightNo %></a></th>
                   <td><%= x.airport %></td>
                   <td><%= x.airline %></td>
                   <td><%= x.departs %></td>
                 </tr>
               </tbody>
-              
               <% }) %>
             </table>
           </div>

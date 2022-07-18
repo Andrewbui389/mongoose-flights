@@ -11,6 +11,12 @@ router.get('/', flightCtr.index)
 //GET /new functionality load form for adding new flights
 router.get('/new', flightCtr.new)
 
+//GET /:id functionality get specific flight from database
+router.get('/:id', flightCtr.show)
+
+//POST / functionality load form for adding new flights
+router.post('/', flightCtr.create)
+
 
 
 
