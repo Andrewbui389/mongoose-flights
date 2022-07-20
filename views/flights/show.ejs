@@ -3,13 +3,38 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="card col-lg-8 mt-1 col-med-4">
-                <div class="card-body text-lg-start text-center">
-                  <h5 class="card-title">Flight Number: <%= data.flightNo%></h5>
+                <div class="card-body text-start">
+                  <h5 class="card-title">Flight Number: <%= data.flightNo %></h5>
                   <h3 class="cardtext">Airport: <%= data.airport%></h3>
                   <h3 class="cardtext">Airline: <%= data.airline%></h3>
                   <h3 class="cardtext">Departure Date: <%= date %></h3>
+                  <ul class="text-center p-0">
+                  <h1>Destinations</h1>
+                    <%data.destination.forEach((x) => {%>
+                      <ol><%=x.airport%> <%=x.arrival%></ol>
+                    <% }) %>
+                  </ul>
                 </div>
+            </div>
+            <form class="col-6" method="POST" action="/flights/<%= data.id %>/destination">
+              <div class="form-group mt-1">
+                <label for="airport">Airport</label>
+                <select class="form-control" name="airport">
+                  <option>DEN</option>
+                  <option>AUS</option>
+                  <option>DFW</option>
+                  <option>LAX</option>
+                  <option>SAN</option>
+                </select>
               </div>
+              <div class="form-group mt-1">
+                <label for="arrival">Arrival Date</label>
+                <input type="date" class="form-control" name="arrival">
+              </div>
+              <div class="form-group mt-3">
+                <input type="submit" class="form-control btn btn-outline-success">
+              </div>
+            </form>
         </div>
     </div>
 </section>

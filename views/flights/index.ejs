@@ -18,10 +18,10 @@
               <% flights.forEach((x) => { %>
               <tbody>
                 <tr>
-                  <th scope="row"><a class="btn btn-outline-secondary" href="/flights/<%= x.id %>"><%= x.flightNo %></a></th>
+                  <th scope="row"><a class="btn btn-outline-secondary border-0" href="/flights/<%= x.id %>"><%= x.flightNo %></a></th>
                   <td><%= x.airport %></td>
                   <td><%= x.airline %></td>
-                  <td><%= x.departs %></td>
+                  <td><%= x.departs.toLocaleDateString()%></td>
                 </tr>
               </tbody>
               <% }) %>
