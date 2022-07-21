@@ -1,4 +1,6 @@
 const Flight = require('../models/database')
+const Ticket = require('../models/ticket')
+const qrCode = require('qrcode')
 
 
 module.exports = {
@@ -34,7 +36,10 @@ function create(req,res){
 
  function show(req, res) {
     Flight.findById(req.params.id , (err,data) => {
-        let dateFormatted = `${data.departs.getMonth()}-${data.departs.getDate()}-${data.departs.getFullYear()} ${data.departs.getHours()}:${data.departs.getMinutes() < 9 ? '0' + data.departs.getMinutes() : data.departs.getMinutes()}`
-        res.render('flights/show', {data, date: dateFormatted})
+        Ticket.find({flight: data._id} , (err,ticket) => {
+            qrCode.toDataURL(`${data.flightNo}`, function (err, url) {
+                res.render('flights/show', {data, date: data.departs.toLocaleDateString() , src:url , ticket})
+            })
+        })
     })
  }
